@@ -1,14 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Dashboard from './pages/Dashboard'
+import Profile from './pages/Profile'
+import NoPage from './pages/NoPage'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className='text-red-600'>this is the component</h1>
+      <Routes>
+        <Route path='/' element={<Navbar />}>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/profile' element={<Profile />} />
+        </Route>
+
+        <Route path='*' element={<NoPage />} />
+      </Routes>
     </>
   )
 }
