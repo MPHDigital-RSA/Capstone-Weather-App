@@ -23,13 +23,13 @@ function Profile() {
             </div>
 
             <div className='w-[100%] grid gap-3 max-w-[900px] md:grid-cols-3 md:grid-rows-2'>
-                <ProfileCard />
-                <ProfileCard />
+                <ProfileCard stack='HTML' perc="98" />
+                <ProfileCard stack='JS' perc="70" />
                 <div className='md:col-span-2'>
-                    <ProfileCard />
+                    <ProfileCard stack='CSS' perc="85" />
                 </div>
                 <div className='md:row-span-full'>
-                    <ProfileCard />
+                    <ProfileCard stack='REACT' perc="68" />
                 </div>
             </div>
 
