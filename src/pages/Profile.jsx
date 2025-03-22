@@ -22,7 +22,7 @@ function Profile() {
                 <Link to='https://github.com/MPHDigital-RSA' target='_blank'>Discord</Link>
             </div>
 
-            <div className='w-[100%] grid gap-3 max-w-[900px] md:grid-cols-3 md:grid-rows-2'>
+            <div className='w-[100%] grid gap-3 max-w-[900px] sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2'>
                 <ProfileCard stack='HTML' perc="98" />
                 <ProfileCard stack='JS' perc="70" />
                 <div className='md:col-span-2'>
