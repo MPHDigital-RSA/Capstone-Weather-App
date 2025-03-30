@@ -10,7 +10,7 @@ function Home() {
                 <img src={sun} alt="the image of the sun" className='w-[120px]' />
                 <h1 className='text-[24px] font-semibold md:text-[30px]'>Welcome to Prince’s Weather App </h1>
                 <p>This app uses ReactJS for development and weather API, to provide data related to the weather, temperature, humidity and the wind speed. using useState to manage states and useEffect</p>
-                <Link to='/dashboard' className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[30px] py-[15px] rounded-xl'>Check the Dash</Link>
+                <Link to='/dashboard' className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[30px] py-[15px] rounded-xl hover:bg-white'>Check the Dashboard</Link>
             </div>
 
         </div>

@@ -16,13 +16,13 @@ function Profile() {
                 </div>
             </div>
 
-            <div className='flex gap-4 bg-white text-[var(--main-color)] font-medium rounded-md p-4 w-[100%] justify-center max-w-[500px]'>
-                <Link to='https://github.com/MPHDigital-RSA' target='_blank'>Github</Link>
-                <Link to='https://github.com/MPHDigital-RSA' target='_blank'>Twitter</Link>
-                <Link to='https://github.com/MPHDigital-RSA' target='_blank'>Discord</Link>
+            <div className='flex gap-4 bg-white text-[var(--main-color)] font-medium rounded-md p-1 w-[100%] justify-center max-w-[500px]'>
+                <Link to='https://github.com/MPHDigital-RSA' target='_blank' className='hover:bg-[var(--accent-color)] p-2 rounded-md'>Github</Link>
+                <Link to='https://github.com/MPHDigital-RSA' target='_blank' className='hover:bg-[var(--accent-color)] p-2 rounded-md'>Twitter</Link>
+                <Link to='https://github.com/MPHDigital-RSA' target='_blank' className='hover:bg-[var(--accent-color)] p-2 rounded-md'>Discord</Link>
             </div>
 
-            <div className='w-[100%] grid gap-3 max-w-[900px] sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2'>
+            <div div className='w-[100%] grid gap-3 max-w-[900px] sm:grid-cols-2 md:grid-cols-3 md:grid-rows-2'>
                 <ProfileCard stack='HTML' perc="98" />
                 <ProfileCard stack='JS' perc="70" />
                 <div className='md:col-span-2'>
@@ -33,7 +33,7 @@ function Profile() {
                 </div>
             </div>
 
-        </div>
+        </div >
     )
 }
 

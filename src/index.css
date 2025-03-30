@@ -6,3 +6,7 @@
     --main-color: #019D8B;
     --accent-color: #FFCE97;
 }
+
+.active {
+    background-color: #ffce9757;
+}
