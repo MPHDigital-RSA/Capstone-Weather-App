@@ -3,8 +3,21 @@ import CityCard from '../components/CityCard'
 import TempCard from '../components/TempCard'
 import HumWindCard from '../components/HumWindCard'
 import Search from '../components/Search'
+import useWeatherStore from '../stores/WeatherStore'
+import humidityIcon from '../assets/humidity.svg'
+import windIcon from '../assets/wind.svg'
 
 function Dashboard() {
+
+    // grabbing data from the API
+    const data = useWeatherStore((state) => state.weatherData)
+
+    // extracting the wind data
+    const wind = data.wind.speed;
+
+    // extracting the humidity data
+    const humidity = data.main.humidity;
+
     return (
         <div className='bg-[var(--main-color)] min-h-[100vh] flex flex-col justify-center items-center px-[30px] pb-[30px] text-white pt-[150px] gap-[10px]'>
             <div className='w-[100%] flex justify-center'>
@@ -17,11 +30,11 @@ function Dashboard() {
                 <div className='col-span-2 sm:col-span-2'><TempCard /></div>
 
                 <div>
-                    <HumWindCard />
+                    <HumWindCard stat="Himidity" unit="%" amount={humidity} icon={humidityIcon} />
                 </div>
 
                 <div>
-                    <HumWindCard />
+                    <HumWindCard stat="Wind" unit="KM/S" amount={wind} icon={windIcon} />
                 </div>
 
             </div>
