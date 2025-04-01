@@ -51,7 +51,7 @@ function Search() {
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 
-            <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl' onClick={refreshWeather}>Refresh</button>
+            <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
 
             {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
 
