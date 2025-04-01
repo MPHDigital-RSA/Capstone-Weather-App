@@ -4,6 +4,10 @@ import { create } from "zustand";
 const useWeatherStore = create((set) => ({
     isLoading: false,
     weatherData: {},
+    city: "new york",
+    setCity : (text) => {
+        set({city : text})
+    },
 
     // function that takes the current city and return data from an api
 

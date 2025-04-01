@@ -3,8 +3,6 @@ import useWeatherStore from '../stores/WeatherStore';
 
 function Search() {
 
-    // const [text, setText] = useState("")
-
     // input state
     const [isEmpty, setIsEmpty] = useState(false)
 
@@ -14,10 +12,16 @@ function Search() {
     // grabbing the search functionality from the zustand store
     const search = useWeatherStore((state) => state.search);
 
+    // grabbing the set city function from the zustand store
+    const setCity = useWeatherStore((state) => state.setCity);
+
+    // grabbing the city variable from the zustand store
+    const city = useWeatherStore((state) => state.city);
+
     // grab the data from input and search the keyword or city and clear the input
     function searchCity() {
         let city = inputRef.current.value;
-
+        setCity(city);
         if (city === "") {
             setIsEmpty(true)
         } else {
@@ -27,9 +31,10 @@ function Search() {
         }
     }
 
-    // refresh city weather
-
+    // refresh searched city weather
     function refreshWeather() {
+        // set the city
+        search(city)
 
     }
 
