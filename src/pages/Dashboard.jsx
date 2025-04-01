@@ -14,7 +14,7 @@ function Dashboard() {
 
     // load the initial weather from the city new york
     useEffect(() => {
-        searchWeather("Durban");
+        searchWeather("new york");
     }, []);
 
     return (
