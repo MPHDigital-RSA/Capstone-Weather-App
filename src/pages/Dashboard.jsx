@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CityCard from '../components/CityCard'
 import TempCard from '../components/TempCard'
 import HumWindCard from '../components/HumWindCard'
@@ -10,13 +10,12 @@ import windIcon from '../assets/wind.svg'
 function Dashboard() {
 
     // grabbing data from the API
-    const data = useWeatherStore((state) => state.weatherData)
+    const searchWeather = useWeatherStore((state) => state.search)
 
-    // extracting the wind data
-    // const wind = data.wind.speed;
-
-    // extracting the humidity data
-    // const humidity = data.main.humidity;
+    // load the initial weather from the city new york
+    useEffect(() => {
+        searchWeather("stanger");
+    }, []);
 
     return (
         <div className='bg-[var(--main-color)] min-h-[100vh] flex flex-col justify-center items-center px-[30px] pb-[30px] text-white pt-[150px] gap-[10px]'>
