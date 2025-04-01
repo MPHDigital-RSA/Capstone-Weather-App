@@ -13,10 +13,10 @@ function Dashboard() {
     const data = useWeatherStore((state) => state.weatherData)
 
     // extracting the wind data
-    const wind = data.wind.speed;
+    // const wind = data.wind.speed;
 
     // extracting the humidity data
-    const humidity = data.main.humidity;
+    // const humidity = data.main.humidity;
 
     return (
         <div className='bg-[var(--main-color)] min-h-[100vh] flex flex-col justify-center items-center px-[30px] pb-[30px] text-white pt-[150px] gap-[10px]'>
@@ -30,11 +30,11 @@ function Dashboard() {
                 <div className='col-span-2 sm:col-span-2'><TempCard /></div>
 
                 <div>
-                    <HumWindCard stat="Himidity" unit="%" amount={humidity} icon={humidityIcon} />
+                    <HumWindCard stat="Himidity" unit="%" icon={humidityIcon} />
                 </div>
 
                 <div>
-                    <HumWindCard stat="Wind" unit="KM/S" amount={wind} icon={windIcon} />
+                    <HumWindCard stat="Wind" unit="KM/H" icon={windIcon} />
                 </div>
 
             </div>
