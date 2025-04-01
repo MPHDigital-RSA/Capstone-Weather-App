@@ -3,6 +3,8 @@ import useWeatherStore from '../stores/WeatherStore';
 
 function Search() {
 
+    // const [text, setText] = useState("")
+
     // input state
     const [isEmpty, setIsEmpty] = useState(false)
 
@@ -25,20 +27,26 @@ function Search() {
         }
     }
 
+    // refresh city weather
+
+    function refreshWeather() {
+
+    }
+
     // function to stop the default behavior of the browser on form subnit
     function handleSubmit(e) {
         e.preventDefault();
     }
 
     return (
-        <div className='relative flex gap-3'>
+        <div className='relative flex flex-col gap-3 sm:flex-row'>
 
             <form className='bg-white p-[5px] rounded-xl max-w-[500px] w-[100%] flex gap-5' onSubmit={handleSubmit}>
                 <input type="text" className='flex-grow p-3 text-[var(--main-color)] border-none outline-none' placeholder='Enter your city' ref={inputRef} />
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 
-            <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl'>Refresh</button>
+            <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl' onClick={refreshWeather}>Refresh</button>
 
             {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
 
