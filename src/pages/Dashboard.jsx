@@ -14,7 +14,7 @@ function Dashboard() {
 
     // load the initial weather from the city new york
     useEffect(() => {
-        searchWeather("stanger");
+        searchWeather("Durban");
     }, []);
 
     return (
@@ -29,7 +29,7 @@ function Dashboard() {
                 <div className='col-span-2 sm:col-span-2'><TempCard /></div>
 
                 <div>
-                    <HumWindCard stat="Himidity" unit="%" icon={humidityIcon} />
+                    <HumWindCard stat="Humidity" unit="%" icon={humidityIcon} />
                 </div>
 
                 <div>
