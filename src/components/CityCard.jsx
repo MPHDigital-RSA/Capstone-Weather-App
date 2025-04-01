@@ -11,10 +11,10 @@ function CityCard() {
         <>
             {isLoading ? <p className='bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 flex-col text-center justify-center items-center shadow rounded-xl h-[100%]'>Loading</p> :
 
-                <div className='bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 flex-col text-center justify-center items-center shadow rounded-xl h-[100%]'>
+                <div className='bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 sm:flex-col text-center justify-center items-center shadow rounded-xl h-[100%]'>
                     <h1 className='text-[30px] font-semibold'>{data.name}</h1>
 
-                    {data.weather ? <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="Sun Image" className='w-[100px] h-[100px] fit-cover' /> : null}
+                    {data.weather ? <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="Sun Image" className='w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] fit-cover' /> : null}
                 </div>
 
             }
