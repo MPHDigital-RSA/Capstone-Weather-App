@@ -5,6 +5,9 @@
 :root {
     --main-color: #019D8B;
     --accent-color: #FFCE97;
+
+    --light-green-color: #BDEBE6;
+    --transparent-white-color: rgba(255, 255, 255, .5);
 }
 
 .active {

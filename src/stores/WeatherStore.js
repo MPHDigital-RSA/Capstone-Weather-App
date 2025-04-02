@@ -23,6 +23,7 @@ const useWeatherStore = create((set) => ({
         }catch(error){
             set({errorState: true});
             set({errorData: error});
+            alert(error.message)
         }finally{
             set({isLoading:false});
             set({errorState: false});
