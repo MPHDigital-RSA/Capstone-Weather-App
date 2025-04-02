@@ -22,7 +22,7 @@ function Dashboard() {
     }, []);
 
     return (
-        <div className='dark:bg-[var(--light-green-color)] bg-[var(--main-color)] min-h-[100vh] flex flex-col justify-center items-center px-[30px] pb-[30px] text-white pt-[150px] gap-[10px]'>
+        <div className='dark:bg-[var(--light-green-color)] bg-[var(--main-color)] min-h-[100vh] flex flex-col justify-center items-center px-[10px] pb-[30px] text-white pt-[150px] gap-[10px]'>
             <div className='w-[100%] flex justify-center '>
                 <Search />
             </div>
