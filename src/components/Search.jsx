@@ -18,6 +18,9 @@ function Search() {
     // grabbing the city variable from the zustand store
     const city = useWeatherStore((state) => state.city);
 
+    // grabbing data from the API
+    const weatherData = useWeatherStore((state) => state.weatherData)
+
     // grab the data from input and search the keyword or city and clear the input
     function searchCity() {
         let city = inputRef.current.value;
@@ -35,7 +38,6 @@ function Search() {
     function refreshWeather() {
         // set the city
         search(city)
-
     }
 
     // function to stop the default behavior of the browser on form subnit
@@ -51,7 +53,11 @@ function Search() {
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 
-            <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
+            {!weatherData.name ?
+                <></> :
+                <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
+            }
+
 
             {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
 
