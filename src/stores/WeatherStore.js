@@ -18,7 +18,6 @@ const useWeatherStore = create((set) => ({
         try{
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=8cdba67e678df0b6b82cefffade52824`;
             const response = await fetch(url);
-
             const data = await response.json();
             set({weatherData:data});
         }catch(error){
