@@ -46,7 +46,7 @@ function Search() {
     }
 
     return (
-        <div className='relative flex gap-2 w-[100%]'>
+        <div className='relative flex gap-2 w-[100%] flex-col sm:flex-row align-center justify-center'>
 
             <form className=' bg-white p-[4px] rounded-xl max-w-[500px] w-[100%] flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
                 <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent]' placeholder='City Name' ref={inputRef} />
