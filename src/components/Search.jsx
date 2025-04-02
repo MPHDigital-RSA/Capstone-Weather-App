@@ -46,10 +46,10 @@ function Search() {
     }
 
     return (
-        <div className='relative flex flex-col gap-3 sm:flex-row'>
+        <div className='relative flex gap-2'>
 
-            <form className='bg-white p-[5px] rounded-xl max-w-[500px] w-[100%] flex gap-5' onSubmit={handleSubmit}>
-                <input type="text" className='flex-grow p-3 text-[var(--main-color)] border-none outline-none' placeholder='Enter your city' ref={inputRef} />
+            <form className=' bg-white p-[5px] rounded-xl max-w-[500px] w-[100%] flex gap-5 dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
+                <input type="text" className='flex-grow p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent]' placeholder='Enter your city' ref={inputRef} />
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 

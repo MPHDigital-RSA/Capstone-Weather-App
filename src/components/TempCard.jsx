@@ -8,7 +8,7 @@ function TempCard() {
     const data = useWeatherStore((state) => state.weatherData)
 
     return (
-        <div className='shadow rounded-xl bg-white rounded-xl px-[30px] py-[30px] text-[var(--main-color)] flex gap-5 text-center justify-center items-center'>
+        <div className='shadow rounded-xl bg-white rounded-xl px-[30px] py-[30px] text-[var(--main-color)] flex gap-5 text-center justify-center items-center dark:bg-[transparent]'>
             <img src={temp} alt="sun picture" className='w-[15px]' />
 
             {isLoading ?

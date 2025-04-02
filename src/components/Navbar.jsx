@@ -33,7 +33,7 @@ function Navbar() {
                     </div>
                     <div className='flex gap-2'>
                         <NavLink to='/profile' className='hover:bg-[var(--accent-color)] p-3 rounded-md'>Profile</NavLink>
-                        <button className='hover:bg-[var(--accent-color)] p-3 rounded-md' onClick={handleTheme}>Theme</button>
+                        <button className='hover:bg-[var(--accent-color)] p-3 rounded-md' onClick={handleTheme}>{theme === "dark" ? "Dark- mode" : "Light-mode"}</button>
                     </div>
                 </div>
             </div>
