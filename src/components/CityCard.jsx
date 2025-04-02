@@ -9,7 +9,7 @@ function CityCard() {
 
     return (
         <>
-            {isLoading ? <p className='bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 flex-col text-center justify-center items-center shadow rounded-xl h-[100%]'>Loading</p> :
+            {isLoading ? <p className='dark:bg-[transparent] bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 flex-col text-center justify-center items-center shadow rounded-xl h-[100%]'>Loading</p> :
 
                 <div className='bg-white rounded-xl px-[30px] py-[40px] text-[var(--main-color)] flex gap-6 sm:flex-col text-center justify-center items-center shadow rounded-xl h-[100%] dark:bg-[transparent]'>
                     <h1 className='text-[30px] font-semibold'>{data.name}</h1>
