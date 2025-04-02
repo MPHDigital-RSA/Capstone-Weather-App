@@ -28,7 +28,7 @@ function Dashboard() {
             <div className='w-[100%] flex justify-center'>
                 <Search />
             </div>
-            {!weatherData.name ? <div className='max-w-[900px] w-[100%] flex items-center justify-center rounded-xl p-[40px] text-red-300 text-[20px]'>{errData ? errData.message : "City not found"}</div> :
+            {!weatherData.name ? <div className='flex items-center justify-center rounded-md py-2 px-3 text-white bg-red-500 text-[14px]'>{errData ? errData.message : "City not found"}</div> :
                 <div className='max-w-[900px] w-[100%] bg-white rounded-xl text-black p-[10px] grid gap-2 grid-cols-2 auto-rows-auto sm:grid-cols-4'>
 
                     <div className='col-span-2 sm:col-span-2 sm:row-span-2 h-[100%]'><CityCard /></div>
