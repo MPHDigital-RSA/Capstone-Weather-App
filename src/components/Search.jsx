@@ -46,19 +46,21 @@ function Search() {
     }
 
     return (
-        <div className='relative flex gap-2'>
+        <div className='relative flex gap-2 w-[100%]'>
 
-            <form className=' bg-white p-[5px] rounded-xl max-w-[500px] w-[100%] flex gap-5 dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
-                <input type="text" className='flex-grow p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent]' placeholder='Enter your city' ref={inputRef} />
-                <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[20px] py-[10px] rounded-xl' onClick={searchCity}>Search</button>
+            <form className=' bg-white p-[4px] rounded-xl max-w-[500px] w-[100%] flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
+                <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent]' placeholder='City Name' ref={inputRef} />
+                <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[5px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 
+            {/* refresh button to display if theres a city name from the API response */}
             {!weatherData.name ?
                 <></> :
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
             }
 
 
+            {/* error message  */}
             {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
 
         </div>
