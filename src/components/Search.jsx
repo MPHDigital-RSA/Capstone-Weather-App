@@ -26,9 +26,11 @@ function Search() {
         let city = inputRef.current.value;
         setCity(city);
         if (city === "") {
-            setIsEmpty(true)
+            setIsEmpty(true);
         } else {
             search(city);
+            // setting local storage to city
+            window.localStorage.setItem("city", JSON.stringify(city));
             setIsEmpty(false)
             inputRef.current.value = "";
         }
@@ -46,10 +48,10 @@ function Search() {
     }
 
     return (
-        <div className='relative flex gap-2 w-[100%] flex-col sm:flex-row align-center justify-center'>
+        <div className='relative flex gap-2 w-[100%] sm:flex-row align-center justify-center'>
 
-            <form className=' bg-white p-[4px] rounded-xl max-w-[500px] w-[100%] flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
-                <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent]' placeholder='City Name' ref={inputRef} />
+            <form className=' bg-white p-[4px] rounded-xl max-w-[500px] w-full flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
+                <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent] w-full' placeholder='City Name' ref={inputRef} />
                 <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[5px] rounded-xl' onClick={searchCity}>Search</button>
             </form>
 
