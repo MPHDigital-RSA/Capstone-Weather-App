@@ -48,22 +48,35 @@ function Search() {
     }
 
     return (
-        <div className='relative flex gap-2 w-[100%] sm:flex-row align-center justify-center'>
+        <div className="flex flex-col w-full items-center justify-center sm:max-w-[500px]">
 
-            <form className=' bg-white p-[4px] rounded-xl max-w-[500px] w-full flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
-                <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent] w-full' placeholder='City Name' ref={inputRef} />
-                <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[5px] rounded-xl' onClick={searchCity}>Search</button>
-            </form>
+            <div className='relative flex gap-2 w-[100%] sm:flex-row align-center justify-center'>
 
-            {/* refresh button to display if theres a city name from the API response */}
-            {!weatherData.name ?
-                <></> :
-                <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
-            }
+                <form className=' bg-white p-[4px] rounded-xl w-full flex gap-5 justify-between dark:bg-[var(--transparent-white-color)] shadow' onSubmit={handleSubmit}>
+                    <input type="text" className=' p-3 text-[var(--main-color)] border-none outline-none dark:bg-[transparent] w-full' placeholder='City Name' ref={inputRef} />
+                    <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[5px] rounded-xl' onClick={searchCity}>Search</button>
+                </form>
+
+                {/* refresh button to display if theres a city name from the API response */}
+                {!weatherData.name ?
+                    <></> :
+                    <button className='bg-[var(--accent-color)] text-[var(--main-color)] font-medium px-[10px] py-[10px] rounded-xl hover:bg-[white] hover:text-[var(--main-color)]' onClick={refreshWeather}>Refresh</button>
+                }
 
 
-            {/* error message  */}
-            {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
+                {/* error message  */}
+                {isEmpty ? <p className='text-red-300 mt-2 mb-2 font-bold text-md absolute top-[-40px]'>*Type the city first**</p> : <></>}
+
+            </div>
+
+            <div className='flex gap-5 items-center mt-5'>
+                <h2>Recent Searches</h2>
+                <div className='flex gap-2 items-center'>
+                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("stanger"))}>Stanger</p>
+                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("durban"))}>Durban</p>
+                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("richards bay"))}>Richards bay</p>
+                </div>
+            </div>
 
         </div>
 
