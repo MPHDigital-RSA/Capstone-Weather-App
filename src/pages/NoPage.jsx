@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function NoPage() {
+
+    // this is the 404 page
     return (
         <div className='bg-[var(--main-color)] h-[100vh] flex justify-center items-center px-[30px] flex-col gap-6 text-white'>
             <h1 className='text-[40px]'>This is the wrong link</h1>

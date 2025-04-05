@@ -2,6 +2,12 @@ import { create } from "zustand";
 
 // created a zustand weather store
 const useWeatherStore = create((set) => ({
+    recentlySearchedCities: [],
+    // function that set the recently searched cities array
+    setRecentlySearchedCities: (city) => {
+        set(...recentlySearchedCities, city)
+        console.log(recentlySearchedCities);
+    },
     isLoading: false,
     weatherData: {},
     city: "new york",
@@ -12,7 +18,6 @@ const useWeatherStore = create((set) => ({
     errorData:null,
 
     // function that takes the current city and return data from an api
-
     search : async(city) => {
         set({isLoading:true})
         try{

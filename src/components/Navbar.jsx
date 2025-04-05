@@ -20,7 +20,6 @@ function Navbar() {
     const handleTheme = () => {
         // set the theme state to dark if light and light if dark
         setTheme(theme === "dark" ? "light" : "dark");
-        console.log(theme)
     };
 
     return (

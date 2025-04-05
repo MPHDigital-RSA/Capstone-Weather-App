@@ -1,12 +1,34 @@
-# React + Vite
+# Prince Weather Application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the application that displays the weather data from the open weather map API to the dashboard.
 
-Currently, two official plugins are available:
+The application has 3 pages Home, Dashboard and the Profile page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ # Home
+ The home page contains a welcome message and a button to access the dashboard. 
 
-## Expanding the ESLint configuration
+# Dashboard
+The dashboard has a search bar, the recently searched cities section and the weather display section.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-- Search bar Functionality
+The city name is collected by typing the city into the input field and press enter or the search button to request the data of the provided city from the API.
+
+When the request is successful the data is displayed on the weather display section.
+
+incases of invalid city name or request failure due to network an error UI is displayed and a warning message is displayed when the user try to search without any input.
+
+-- Recently Searched Section
+Three most recently searched cities are displayed for easier navigation. but the data doesnt not persist between sessions.
+
+-- Weather Display Section
+Consist of five variables to store the city name, weather icon, temperature, humidity and wind speed. upon successful request these variables are retrieved from a zustand store and displayed in their required fields.
+
+# Profile
+Displays the authors profile, experience and social links.
+
+
+# Tech Used
+- REACT JS
+- Tailwind CSS
+- Figma
+- Git

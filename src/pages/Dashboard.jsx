@@ -26,6 +26,7 @@ function Dashboard() {
 
             <Search />
 
+            {/* if the city data from API is not available display the error message otherwise display the weather data */}
             {!weatherData.name ? <ErrorMessage /> :
                 <div className='max-w-[900px] w-[100%] bg-white rounded-xl text-black p-[10px] grid gap-2 grid-cols-2 auto-rows-auto sm:grid-cols-4 dark:bg-[var(--transparent-white-color)]'>
 

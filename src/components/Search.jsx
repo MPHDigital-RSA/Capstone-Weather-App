@@ -3,6 +3,9 @@ import useWeatherStore from '../stores/WeatherStore';
 
 function Search() {
 
+    // the searched cities state
+    const [searchedCities, setSearchedCities] = useState(["new york"]);
+
     // input state
     const [isEmpty, setIsEmpty] = useState(false)
 
@@ -16,7 +19,7 @@ function Search() {
     const setCity = useWeatherStore((state) => state.setCity);
 
     // grabbing the city variable from the zustand store
-    const city = useWeatherStore((state) => state.city);
+    const currentCity = useWeatherStore((state) => state.city);
 
     // grabbing data from the API
     const weatherData = useWeatherStore((state) => state.weatherData)
@@ -29,17 +32,21 @@ function Search() {
             setIsEmpty(true);
         } else {
             search(city);
-            // setting local storage to city
-            window.localStorage.setItem("city", JSON.stringify(city));
-            setIsEmpty(false)
+            setIsEmpty(false);
             inputRef.current.value = "";
         }
-    }
+
+        setSearchedCities(S => [...S, city]);
+        if (searchedCities.length === 3) {
+            setSearchedCities([city]);
+        }
+
+    };
 
     // refresh searched city weather
     function refreshWeather() {
         // set the city
-        search(city)
+        search(currentCity)
     }
 
     // function to stop the default behavior of the browser on form subnit
@@ -69,13 +76,14 @@ function Search() {
 
             </div>
 
-            <div className='flex gap-5 items-center mt-5'>
-                <h2>Recent Searches</h2>
-                <div className='flex gap-2 items-center'>
-                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("stanger"))}>Stanger</p>
-                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("durban"))}>Durban</p>
-                    <p className='text-[var(--main-color)] bg-white py-2 px-3 rounded-md cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => (search("richards bay"))}>Richards bay</p>
+            <div className='flex flex-col gap-3 items-center mt-[10px] w-full justify-center bg-white rounded-xl p-2 dark:bg-[var(--transparent-white-color)]'>
+                <h2 className='tracking-tight text-[var(--main-color)] text-xl py-2'>Recent Searches</h2>
+
+                <div className='flex text-[var(--main-color)] gap-2'>
+                    {searchedCities.map((city, index) => <p key={index} className='shadow py-2 px-4 rounded-xl flex-grow-1 cursor-pointer hover:bg-[var(--accent-color)]' onClick={() => search(city)}>{city}</p>)}
                 </div>
+
+
             </div>
 
         </div>
